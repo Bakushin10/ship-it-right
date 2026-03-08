@@ -1,0 +1,46 @@
+{
+  "name": "ship-it-right",
+  "version": "0.1.0",
+  "description": "A structured project management tool for Claude Code - ship it right the first time",
+  "main": "dist/installer.js",
+  "bin": {
+    "ship-it-right": "dist/installer.js"
+  },
+  "scripts": {
+    "build": "tsc && npm run copy-files",
+    "copy-files": "cp -r src/claude-integration dist/ && find dist/claude-integration -name '*.ts' -type f -delete",
+    "dev": "tsc --watch",
+    "prepublishOnly": "npm run build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "claude-code",
+    "project-management",
+    "workflow",
+    "productivity",
+    "cli"
+  ],
+  "files": [
+    "dist",
+    "src/claude-integration"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/ship-it-right.git"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "dependencies": {
+    "commander": "^11.1.0",
+    "inquirer": "^9.2.12",
+    "chalk": "^4.1.2"
+  },
+  "devDependencies": {
+    "@types/inquirer": "^9.0.7",
+    "@types/node": "^20.10.0",
+    "typescript": "^5.3.2"
+  }
+}
